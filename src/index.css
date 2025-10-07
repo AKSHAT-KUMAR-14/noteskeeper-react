@@ -1,3 +1,58 @@
-* {
-  box-sizing: border-box;
+:root{
+  --bg: #f5f7fb;
+  --card: #fff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #2563eb;
 }
+
+*{ box-sizing: border-box; }
+html,body,#root{ height:100%; margin:0; font-family: 'Poppins', sans-serif; }
+
+body.light { background: var(--bg); color: var(--text); }
+body.dark  { background: #0b1220; color: #e6eef8; }
+
+.container { max-width:1100px; margin:30px auto; padding:20px; }
+.header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.app-title { font-weight:700; font-size:1.4rem; display:flex; gap:10px; align-items:center; }
+.subtle { color:var(--muted); font-size:0.9rem; }
+.controls { display:flex; gap:8px; align-items:center; }
+
+/* basic card & note styles */
+.card {
+  background: var(--card);
+  border-radius:12px;
+  padding:14px;
+  box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+}
+.note-card { padding:12px; border-radius:10px; margin:8px 0; display:flex; justify-content:space-between; gap:12px; }
+.note-left { max-width:78%; }
+.note-title { font-weight:600; margin-bottom:6px; }
+.note-body { white-space:pre-wrap; color:var(--muted); font-size:0.95rem; }
+.small-btn{ border: none; background: transparent; cursor:pointer; padding:6px; border-radius:8px;}
+.primary-btn {
+  background:var(--accent); color:white; border: none; padding:8px 12px; border-radius:8px; cursor:pointer;
+}
+.ghost { background:transparent; border:1px solid rgba(0,0,0,0.06); padding:8px 10px; border-radius:8px; cursor:pointer; }
+.row { display:flex; gap:10px; align-items:center; }
+.col { display:flex; flex-direction:column; gap:8px; }
+
+/* create area */
+.create-area input, .create-area textarea {
+  width:100%; padding:10px; border-radius:8px; border:1px solid #e6e9ef; outline:none; font-size:0.95rem;
+}
+.create-area textarea{ resize:vertical; min-height:88px; }
+
+/* search */
+.search { padding:8px 12px; border-radius:999px; border:1px solid #e6e9ef; outline:none; min-width:220px; }
+
+/* layout */
+.grid { display:grid; grid-template-columns: 1fr 360px; gap:18px; align-items:start; }
+@media (max-width:900px){ .grid{ grid-template-columns: 1fr; } }
+
+/* settings panel */
+.settings { position:sticky; top:24px; }
+.footer { margin-top:22px; text-align:center; color:var(--muted); font-size:0.9rem; }
+
+/* encrypted badge */
+.badge { display:inline-block; padding:4px 8px; border-radius:999px; background:#fde68a; font-weight:600; font-size:12px; }
