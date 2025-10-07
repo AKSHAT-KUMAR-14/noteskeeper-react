@@ -4,7 +4,23 @@
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#111827" />
+    <!-- Theme color for supported browsers -->
+    <meta name="theme-color" content="#ffffff">
+    <script>
+      // Dynamically set theme color for all browsers, including Firefox
+      function setThemeColor() {
+        const darkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const themeColor = darkScheme ? '#111827' : '#ffffff';
+        let metaTag = document.querySelector('meta[name="theme-color"]');
+        if (metaTag) {
+          metaTag.setAttribute('content', themeColor);
+        }
+      }
+      setThemeColor();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setThemeColor);
+    </script>
+    <meta name="msapplication-navbutton-color" content="#111827" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#111827" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Poppins font -->
