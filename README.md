@@ -41,7 +41,7 @@
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/noteskeeper-react.git
+git clone https://github.com/AKSHAT-KUMAR-14/noteskeeper-react
 cd noteskeeper-react
 ```
 
